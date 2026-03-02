@@ -20,7 +20,7 @@ library_name: transformers
 
 
 
-🚀 LG AImers Hackathon 8th: On-Device LLM Optimization
+🚀 LG AImers Hackerthon 8th: On-Device LLM Optimization
 Project Overview
 Recently, the demand for lightweight AI models capable of operating swiftly and reliably in On-Device environments has surged, extending beyond traditional cloud-based large-scale models. Specifically, compressing model size while maintaining robust performance has emerged as a critical challenge due to strict constraints regarding latency, memory footprint, and operational costs.
 
