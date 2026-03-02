@@ -14,6 +14,56 @@ pipeline_tag: text-generation
 library_name: transformers
 ---
 
+
+
+
+
+
+
+🚀 LG AImers Hackathon 8th: On-Device LLM Optimization
+Project Overview
+Recently, the demand for lightweight AI models capable of operating swiftly and reliably in On-Device environments has surged, extending beyond traditional cloud-based large-scale models. Specifically, compressing model size while maintaining robust performance has emerged as a critical challenge due to strict constraints regarding latency, memory footprint, and operational costs.
+
+EXAONE provides a lineup of Small-scale models optimized for resource-constrained environments (e.g., laptops and mobile devices), alongside its Global Frontier-level Large-scale models. However, simply reducing the number of parameters—while beneficial for memory and inference speed—inevitably leads to a distinct degradation in accuracy.
+
+Consequently, it has become crucial to explore advanced model compression techniques that effectively reduce size while minimizing performance loss and maximizing efficiency in real-world inference environments. Driven by this challenge, this hackathon focuses on practical LLM optimization targeting the EXAONE model.
+
+Objectives & Evaluation
+This project performs model compression and optimization on the EXAONE-4.0-1.2B base model.
+The primary objective is to optimize the trade-off between model size, inference speed, and overall performance by analyzing the model's architecture, applying various quantization/compression techniques, and conducting additional training or fine-tuning as necessary.
+
+The optimized models are evaluated using a vLLM-based inference engine, where performance and efficiency are benchmarked under identical inference pipeline conditions. Ultimately, this project aims to design and validate a meaningful, production-ready model compression strategy that goes beyond simple parameter reduction to comprehensively address inference efficiency in actual service environments.
+
+💻 Developer's Note: Code Implementation Details
+This repository contains the implementation for optimizing the EXAONE-4.0-1.2B model.
+
+First, the code preprocesses the MANTA-1M dataset (an EXAONE public domain dataset) to strictly comply with the model's chat_template.jinja formatting.
+
+To enhance model efficiency and inference performance, we apply GPTQ (w4a16) quantization. The pipeline generates calibration data and computes the 4-bit quantized parameters using the following hyperparameter configurations:
+
+num_calibration_samples: 1024
+
+max_seq_len: 1024
+
+group_size: 128
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center">
 <img src="assets/EXAONE_Symbol+BI_3d.png", width="300", style="margin: 40 auto;">
 🎉 License Updated! We are pleased to announce our more flexible licensing terms 🤗
